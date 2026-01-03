@@ -11,7 +11,7 @@ import os
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
 
-
+from agents.main_agent import current_session_id
 from agents.main_agent import orchestrator_agent 
 from langchain.messages import HumanMessage
 
@@ -43,8 +43,11 @@ def read_root():
 @app.post("/triage", response_model=AgentResponse)
 async def triage_endpoint(request: UserRequest):
     try:
-
         session_id = request.session_id or str(uuid.uuid4())
+        
+        # --- FIX: On définit le contexte pour cette requête ---
+        token = current_session_id.set(session_id) 
+        
         config = {"configurable": {"thread_id": session_id}}
 
         context_msg = request.query
@@ -58,12 +61,14 @@ async def triage_endpoint(request: UserRequest):
 
         bot_response = result['messages'][-1].content
 
+        current_session_id.reset(token)
+
         return AgentResponse(
             response=bot_response,
             session_id=session_id
         )
-
+        
     except Exception as e:
-
+    
         print(f"Error: {str(e)}")
         raise HTTPException(status_code=500, detail="Erreur interne du système de triage.")

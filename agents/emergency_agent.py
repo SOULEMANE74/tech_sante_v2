@@ -20,12 +20,15 @@ import  sqlite3
 load_dotenv()
 
 def emergency_agent():
-
+    sql_agent = None 
+    
     try:
-        
-        print("[DEBUG] : l'agent a demarrer")
-
+        print("[DEBUG] : Démarrage de l'agent Emergency...")
         api_key = os.environ.get('GROQ_API_KEY')
+        
+        if not api_key:
+            raise ValueError("GROQ_API_KEY est manquant dans les variables d'environnement.")
+
         llm = ChatGroq(
             model="openai/gpt-oss-120b", 
             api_key=api_key, 
@@ -33,34 +36,14 @@ def emergency_agent():
         )
 
         sql_agent = create_agent(
-            model = llm,
-            tools = [check_beds_availability],
-            system_prompt = SYSTEME_PROMPTE_TEST,
-            checkpointer = InMemorySaver(),
-
+            model=llm,
+            tools=[check_beds_availability],
+            system_prompt=SYSTEME_PROMPTE_TEST,
+            checkpointer=InMemorySaver(),
         )
-        # return sql_agent
+        return sql_agent
 
     except Exception as e:
-        print(f"[BUG] l'agent n'a pas demarer !!")
+        print(f"[CRITICAL ERROR] L'agent Emergency n'a pas pu démarrer !")
         print(f"Erreur : {e}")
-
-    return sql_agent
-
-#     while True:
-#         q = input("\nUrgence : ")
-#         config = {"configurable": {"thread_id": "1"}}
-
-#         if q.lower() == 'q': 
-#             break
-#         q = HumanMessage(content=q)
-#         try:
-#             result = sql_agent.invoke({"messages": [q]}, config=config)
-#             print(result['messages'][-1].content)
-#         except Exception as e:
-#             print(f"[BUG] l'agent n'a pas demarer !!")
-#             print(f"Erreur : {e}")
-
-# if __name__ == '__main__':
-#     emergency_agent()
-
+        raise e
