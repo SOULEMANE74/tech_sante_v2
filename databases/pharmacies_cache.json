@@ -1,0 +1,179 @@
+{
+  "timestamp": 1767401766.9960206,
+  "pharmacies": [
+    {
+      "name": "Pharmacie d'Adidogomé",
+      "latitude": 6.1850666,
+      "longitude": 1.163665,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+d%27Adidogom%C3%A9,+Lom%C3%A9/@6.1850666,1.163665,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159051c625d73:0xc9b95e8e87d4b34d!2m2!1d1.1662806!2d6.1850232?entry=ttu"
+    },
+    {
+      "name": "654M R6H Pharmacie Laus Déo",
+      "latitude": 6.2070683,
+      "longitude": 1.1805496,
+      "lien_itineraire": "https://www.google.com/maps/dir//654M%2BR6H+Pharmacie+Laus+D%C3%A9o,+Lom%C3%A9/@6.2070683,1.1805496,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021584f81d9b85d:0x242212c7d3c369e2!2m2!1d1.1831221!2d6.2070508?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Ossan",
+      "latitude": 6.2011373,
+      "longitude": 1.1781887,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Ossan,+Lom%C3%A9/@6.2011373,1.1781887,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102158511d29ea4f:0x44058ce64a5a775f!2m2!1d1.1807433!2d6.2010802?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Apollon, Unnamed Road",
+      "latitude": 6.2028583,
+      "longitude": 1.1641086,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Apollon,+Unnamed+Road,+Lom%C3%A9/@6.2028583,1.1641086,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159ae4b9aac0f:0x5d7767cd4eb02bb8!2m2!1d1.1666778!2d6.2028463?entry=ttu"
+    },
+    {
+      "name": "Dieudonné",
+      "latitude": 6.2130753,
+      "longitude": 1.1565937,
+      "lien_itineraire": "https://www.google.com/maps/dir//Dieudonn%C3%A9,+Lom%C3%A9/@6.2130753,1.1565937,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159ca97f7a443:0x41a3a5358f167ba3!2m2!1d1.172443!2d6.2157252?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Vigueur, Rue de l'Harmattan",
+      "latitude": 6.1592044,
+      "longitude": 1.1718901,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Vigueur,+Rue+de+l%27Harmattan,+Lom%C3%A9/@6.1592044,1.1718901,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021588836b65891:0x227a984942caa590!2m2!1d1.200818!2d6.1925431?entry=ttu"
+    },
+    {
+      "name": "654Q QR6 PHARMACIE DU MILLENAIRE",
+      "latitude": 25.9226929,
+      "longitude": -19.8010414,
+      "lien_itineraire": "https://www.google.com/maps/dir//654Q%2BQR6+PHARMACIE+DU+MILLENAIRE,+Lom%C3%A9/@25.9226929,-19.8010414,4z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102158430a2cd681:0x759ca45f23809cde!2m2!1d1.1895233!2d6.2068416?entry=ttu"
+    },
+    {
+      "name": "578M M7H Pharmacie LE PROGRES",
+      "latitude": 6.1666913,
+      "longitude": 1.2806713,
+      "lien_itineraire": "https://www.google.com/maps/dir//578M%2BM7H+Pharmacie+LE+PROGRES,+Lom%C3%A9/@6.1666913,1.2806713,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e30d1ef042ed:0x77606b3541157b07!2m2!1d1.2832432!2d6.1666854?entry=ttu"
+    },
+    {
+      "name": "Pharmacie La Main de Dieu, Camp des Policiers d'Agoè",
+      "latitude": 6.2349852,
+      "longitude": 1.1977908,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+La+Main+de+Dieu,+Camp+des+Policiers+d%27Ago%C3%A8,+Lom%C3%A9/@6.2349852,1.1977908,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021581d73c00dd7:0xe4907b90a9c5a506!2m2!1d1.2003722!2d6.2349736?entry=ttu"
+    },
+    {
+      "name": "46PJ 3R3 Pharmacie du 3ème Arrondissement",
+      "latitude": 6.1351464,
+      "longitude": 1.2271643,
+      "lien_itineraire": "https://www.google.com/maps/dir//46PJ%2B3R3+Pharmacie+du+3%C3%A8me+Arrondissement,+Lom%C3%A9/@6.1351464,1.2271643,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e17ec5d8fe5d:0x2ba40fac7ee93b5c!2m2!1d1.2320288!2d6.1351318?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Campus",
+      "latitude": 6.1629236,
+      "longitude": 1.2107827,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Campus,+Lom%C3%A9/@6.1629236,1.2107827,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e2086ca9a241:0x8336285d5349e394!2m2!1d1.2132861!2d6.1629072?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE AGBEGNIGAN, Près du PRET A MANGER, Tokoin Ramco - Gbadago, Av. de la Libération",
+      "latitude": 6.1470491,
+      "longitude": 1.2166395,
+      "lien_itineraire": "https://www.google.com/maps/dir//PHARMACIE+AGBEGNIGAN,+Pr%C3%A8s+du+PRET+A+MANGER,+Tokoin+Ramco+-+Gbadago,+Av.+de+la+Lib%C3%A9ration,+Lom%C3%A9/@6.1470491,1.2166395,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e1a2c6cd10e7:0x9a9182f2641a5ac2!2m2!1d1.2192144!2d6.1470438?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Siloé, Boulevard Du 30 Aout",
+      "latitude": 6.206862,
+      "longitude": 1.1383416,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Silo%C3%A9,+Boulevard+Du+30+Aout,+Lom%C3%A9/@6.206862,1.1383416,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021598f26eea131:0x35e64eb3a00ccc35!2m2!1d1.1409208!2d6.2068637?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Actuelle",
+      "latitude": 6.1926065,
+      "longitude": 1.1414422,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Actuelle,+Lom%C3%A9/@6.1926065,1.1414422,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159781603b4e7:0x24d960417045db05!2m2!1d1.1440001!2d6.1925272?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE de SÉGBÉ",
+      "latitude": 6.1939378,
+      "longitude": 1.1115288,
+      "lien_itineraire": "https://www.google.com/maps/dir//PHARMACIE+de+S%C3%89GB%C3%89,+Rte+vers+Segbe/@6.1939378,1.1115288,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x10215bd601216397:0x9dc9d890606d228d!2m2!1d1.1141034!2d6.1939393?entry=ttu"
+    },
+    {
+      "name": "Marché de Hédzranawoé, Quartier hédzranawoé",
+      "latitude": 6.181325,
+      "longitude": 1.23879,
+      "lien_itineraire": "https://www.google.com/maps/dir//March%C3%A9+de+H%C3%A9dzranawo%C3%A9,+Quartier+h%C3%A9dzranawo%C3%A9,+Lom%C3%A9/@6.181325,1.23879,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e24f8ec46e23:0x34372a454425e031!2m2!1d1.2413649!2d6.1813197?entry=ttu"
+    },
+    {
+      "name": "659X X87 Pharmacie Clémence",
+      "latitude": 6.2199126,
+      "longitude": 1.1957134,
+      "lien_itineraire": "https://www.google.com/maps/dir//659X%2BX87+Pharmacie+Cl%C3%A9mence,+Lom%C3%A9/@6.2199126,1.1957134,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159d40bcde9b5:0xe22cc6602954c7e9!2m2!1d1.1982851!2d6.2198601?entry=ttu"
+    },
+    {
+      "name": "6685 996 Pharmacie Saint Michel",
+      "latitude": 6.2152214,
+      "longitude": 1.2058366,
+      "lien_itineraire": "https://www.google.com/maps/dir//6685%2B996+Pharmacie+Saint+Michel,+Lom%C3%A9/@6.2152214,1.2058366,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x10215874bf6522b5:0xd042ef748317cad!2m2!1d1.2083838!2d6.2152163?entry=ttu"
+    },
+    {
+      "name": "86C9 92F Pharmacie Assurance",
+      "latitude": 6.3209357,
+      "longitude": 1.2149751,
+      "lien_itineraire": "https://www.google.com/maps/dir//86C9%2B92F+Pharmacie+Assurance,+Ad%C3%A9tikop%C3%A9/@6.3209357,1.2149751,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023fd4a57f5e093:0x3d0eb2bae02ba930!2m2!1d1.21755!2d6.3209304?entry=ttu"
+    },
+    {
+      "name": "Pharmacie ALTA, Route de Mission Tové",
+      "latitude": 6.243013,
+      "longitude": 1.183988,
+      "lien_itineraire": "https://www.google.fr/maps/dir//Pharmacie+ALTA,+Route+de+Mission+Tov%C3%A9,+Lom%C3%A9/@6.243013,1.183988,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102157c774abf859:0xbc4121c15fee2a73!2m2!1d1.1865629!2d6.2430077?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE ABRAHAM, Unnamed Road",
+      "latitude": 6.2347721,
+      "longitude": 1.1727718,
+      "lien_itineraire": "https://www.google.fr/maps/dir//PHARMACIE+ABRAHAM,+Unnamed+Road,+Lom%C3%A9/@6.2347721,1.1727718,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021582aed1363dd:0x6c5353831056af76!2m2!1d1.1753467!2d6.2347668?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Divina Gracia, Unnamed Road,",
+      "latitude": 6.2311797,
+      "longitude": 1.1867216,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Divina+Gracia,+Unnamed+Road,,+Lom%C3%A9/@6.2311797,1.1867216,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021582123f5d9cb:0x7fb921e585a57258!2m2!1d1.1892965!2d6.2311744?entry=ttu"
+    },
+    {
+      "name": "64MX R55 Pharmacie de Zossimé",
+      "latitude": 6.2333588,
+      "longitude": 1.1453358,
+      "lien_itineraire": "https://www.google.com/maps/dir//64MX%2BR55+Pharmacie+de+Zossim%C3%A9,+Lom%C3%A9/@6.2333588,1.1453358,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102159bf9ed3231d:0x68e14804219d9210!2m2!1d1.1479107!2d6.2333535?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE ST PHILIPPE, Unnamed Road",
+      "latitude": 6.2316522,
+      "longitude": 1.1075915,
+      "lien_itineraire": "https://www.google.com/maps/dir//PHARMACIE+ST+PHILIPPE,+Unnamed+Road,+Sangu%C3%A9ra/@6.2316522,1.1075915,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x10215bdaafa12b65:0xc8f0ee4aea16523b!2m2!1d1.1101737!2d6.2317058?entry=ttu"
+    },
+    {
+      "name": "64W8 92V Pharmacie EVA",
+      "latitude": 6.2459153,
+      "longitude": 1.1124529,
+      "lien_itineraire": "https://www.google.com/maps/dir//64W8%2B92V+Pharmacie+EVA,+Sangu%C3%A9ra/@6.2459153,1.1124529,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x10215165f292fe51:0xf334c5c1bb8ff4e4!2m2!1d1.1150239!2d6.2459105?entry=ttu"
+    },
+    {
+      "name": "Pharmacie Djidjolé",
+      "latitude": 6.1804754,
+      "longitude": 1.1926804,
+      "lien_itineraire": "https://www.google.com/maps/dir//Pharmacie+Djidjol%C3%A9,+Lom%C3%A9/@6.1804754,1.1926804,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021589301062fc5:0x73347e8d85208a45!2m2!1d1.1952551!2d6.18047?entry=ttu"
+    },
+    {
+      "name": "86CF 493 Pharmacie Amen",
+      "latitude": 6.3202674,
+      "longitude": 1.2208574,
+      "lien_itineraire": "https://www.google.com/maps/dir//86CF%2B493+Pharmacie+Amen,+Ad%C3%A9tikop%C3%A9/@6.3202674,1.2208574,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023fd0677bc8cc5:0xe1a695018267d5fd!2m2!1d1.2234323!2d6.3202621?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE VERSEAU",
+      "latitude": 6.1668256,
+      "longitude": 1.3319176,
+      "lien_itineraire": "https://www.google.com/maps/dir//PHARMACIE+VERSEAU,+Lom%C3%A9/@6.1668256,1.3319176,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1023e5ced3673651:0x10f1bdcdf31890d5!2m2!1d1.3344968!2d6.1668073?entry=ttu"
+    },
+    {
+      "name": "PHARMACIE LE ROCHER, 19BP 102 Agoè Zongo après le terrain de Golf sur la Nationale, N1",
+      "latitude": 6.2461716,
+      "longitude": 1.206806,
+      "lien_itineraire": "https://www.google.com/maps/dir//PHARMACIE+LE+ROCHER,+19BP+102+Ago%C3%A8+Zongo+apr%C3%A8s+le+terrain+de+Golf+sur+la+Nationale,+N1,+Lom%C3%A9/@6.2461716,1.206806,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x102157684e576a89:0x4280602cd7d672b9!2m2!1d1.2093809!2d6.2461663?entry=ttu"
+    }
+  ]
+}
