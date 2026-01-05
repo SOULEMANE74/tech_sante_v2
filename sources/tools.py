@@ -194,7 +194,9 @@ import re
 from urllib.parse import unquote
 from bs4 import BeautifulSoup
 from langchain.tools import tool
-from typing import Optional  # <--- IMPORT IMPORTANT AJOUTÉ
+from typing import Optional
+import pyshorteners
+
 
 # --- CONFIGURATION DES CHEMINS ---
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -404,7 +406,10 @@ def find_nearest_pharmacies(user_lat: Optional[float] = None, user_lon: Optional
             user_lat, user_lon,
             pharma["latitude"], pharma["longitude"]
         )
-        
+        s = pyshorteners.Shortener()
+        long_url = pharma["lien_itineraire"]
+        pharma["lien_itineraire"] = s.isgd.short(long_url)
+
         results.append({
             "name": pharma["name"],
             "distance_km": round(dist, 2),
