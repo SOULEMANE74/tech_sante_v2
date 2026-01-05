@@ -126,7 +126,7 @@ async def whatsapp_reply(
 
 ###########################################################################################################
 
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_TOKEN="7888754571:AAHKUB0eMPHmKOP3X7nutoyDgbzf0yB5VQU"
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
 
