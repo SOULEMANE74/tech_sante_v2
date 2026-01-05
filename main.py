@@ -1,5 +1,7 @@
 import uvicorn
 from fastapi import Form, Response
+import requests
+from fastapi import Request
 from twilio.twiml.messaging_response import MessagingResponse
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -127,15 +129,6 @@ async def whatsapp_reply(
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
-# --- IMPORTS ---
-import requests
-from fastapi import Request
-
-# Mettez votre TOKEN Telegram ici (ou mieux, dans le .env, mais pour le test ça ira)
-TELEGRAM_TOKEN = "COLLEZ_VOTRE_TOKEN_ICI"
-TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-
-# ... (Gardez tout votre code d'initialisation de l'agent Orchestrator ici) ...
 
 # --- ROUTE TELEGRAM ---
 @app.post("/telegram")
