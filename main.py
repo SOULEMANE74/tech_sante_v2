@@ -121,3 +121,83 @@ async def whatsapp_reply(
     # 6. Retourner du XML (Langage que Twilio comprend)
     return Response(content=str(resp), media_type="application/xml")
 
+
+###########################################################################################################
+
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+
+# --- IMPORTS ---
+import requests
+from fastapi import Request
+
+# Mettez votre TOKEN Telegram ici (ou mieux, dans le .env, mais pour le test ça ira)
+TELEGRAM_TOKEN = "COLLEZ_VOTRE_TOKEN_ICI"
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+
+# ... (Gardez tout votre code d'initialisation de l'agent Orchestrator ici) ...
+
+# --- ROUTE TELEGRAM ---
+@app.post("/telegram")
+async def telegram_webhook(request: Request):
+    """
+    Reçoit les messages de Telegram.
+    Gère Texte ET Localisation.
+    """
+    data = await request.json()
+    
+    # Vérification basique que c'est bien un message
+    if "message" not in data:
+        return {"status": "ignored"}
+    
+    message = data["message"]
+    chat_id = message["chat"]["id"]
+    
+    # 1. Récupération du contenu (Texte ou Localisation)
+    user_query = ""
+    lat = None
+    lon = None
+
+    # Cas A : L'utilisateur envoie sa position (Trombone > Location)
+    if "location" in message:
+        lat = message["location"]["latitude"]
+        lon = message["location"]["longitude"]
+        user_query = "Voici ma position actuelle pour trouver l'hôpital le plus proche."
+        # On injecte la position pour l'agent
+        user_query += f"\n[SYSTEM DATA: User Location is LAT:{lat}, LON:{lon}]"
+    
+    # Cas B : L'utilisateur envoie du texte
+    elif "text" in message:
+        user_query = message.get("text", "")
+    
+    else:
+        # Autre type de fichier (photo, etc.), on ignore pour l'instant
+        return {"status": "ignored"}
+
+    # 2. Appel de l'Agent IA
+    try:
+        # On utilise le chat_id Telegram comme session_id pour la mémoire
+        config = {"configurable": {"thread_id": str(chat_id)}}
+        
+        # Petit message d'attente (optionnel mais sympa sur Telegram)
+        requests.post(TELEGRAM_API_URL, json={"chat_id": chat_id, "text": "⏳ Analyse TechSanté en cours..."})
+
+        result = orchestrator.invoke(
+            {"messages": [HumanMessage(content=user_query)]}, 
+            config=config
+        )
+        
+        bot_response = result['messages'][-1].content
+
+    except Exception as e:
+        bot_response = f"Erreur technique : {str(e)}"
+
+    # 3. Répondre sur Telegram
+    payload = {
+        "chat_id": chat_id,
+        "text": bot_response,
+        "parse_mode": "Markdown" # Permet de mettre en gras/italique
+    }
+    requests.post(TELEGRAM_API_URL, json=payload)
+
+    return {"status": "ok"}
