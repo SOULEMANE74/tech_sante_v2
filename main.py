@@ -1,4 +1,6 @@
 import uvicorn
+from fastapi import Form, Response
+from twilio.twiml.messaging_response import MessagingResponse
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
@@ -72,3 +74,50 @@ async def triage_endpoint(request: UserRequest):
     
         print(f"Error: {str(e)}")
         raise HTTPException(status_code=500, detail="Erreur interne du système de triage.")
+    
+###########################################################################################
+#---------------------------------Whatsap endpoint----------------------------------------#
+###########################################################################################
+
+@app.post("/whatsapp")
+async def whatsapp_reply(
+    Body: str = Form(...), 
+    Latitude: str = Form(None), 
+    Longitude: str = Form(None)
+):
+    
+    resp = MessagingResponse()
+    msg = resp.message()
+
+    try:
+
+        lat = float(Latitude) if Latitude else None
+        lon = float(Longitude) if Longitude else None
+
+        # 3. Préparer le contexte pour l'Orchestrateur
+
+        user_query = Body
+        if lat and lon:
+            user_query += f"\n[SYSTEM DATA: User Location is LAT:{lat}, LON:{lon}]"
+
+        # 4. Appel de l'agent (comme dans votre endpoint /triage)
+
+        config = {"configurable": {"thread_id": "whatsapp_user"}}
+        
+        result = orchestrator.invoke(
+            {"messages": [HumanMessage(content=user_query)]}, 
+            config=config
+        )
+        
+        bot_response = result['messages'][-1].content
+
+        # 5. Injecter la réponse de l'IA dans le message WhatsApp
+        msg.body(bot_response)
+
+    except Exception as e:
+        # En cas d'erreur, on prévient l'utilisateur sur WhatsApp
+        msg.body(f"Désolé, une erreur technique est survenue : {str(e)}")
+
+    # 6. Retourner du XML (Langage que Twilio comprend)
+    return Response(content=str(resp), media_type="application/xml")
+

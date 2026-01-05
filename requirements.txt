@@ -21,3 +21,5 @@ bs4
 langchain-classic
 langgraph-checkpoint-postgres
 pyshorteners
+twilio
+python-multipart
