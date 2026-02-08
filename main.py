@@ -1,13 +1,11 @@
 import uvicorn
-from fastapi import Form, Response
-import requests
-from fastapi import Request
-from twilio.twiml.messaging_response import MessagingResponse
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Form, Response, UploadFile, File, requests
 from pydantic import BaseModel
 from typing import Optional
 from pathlib import Path
+from sources.stt_transcribe import transcribe_audio
 import uuid
+import shutil
 
 import sys
 import os
@@ -37,7 +35,7 @@ class AgentResponse(BaseModel):
     session_id: str
 
 # --- Initialisation de l'agent ---
-# On initialise l'agent une seule fois au démarrage
+
 orchestrator = orchestrator_agent()
 
 @app.get("/")
@@ -49,7 +47,7 @@ async def triage_endpoint(request: UserRequest):
     try:
         session_id = request.session_id or str(uuid.uuid4())
         
-        # --- FIX: On définit le contexte pour cette requête ---
+        # On définit le contexte pour cette requête ---
         token = current_session_id.set(session_id) 
         
         config = {"configurable": {"thread_id": session_id}}
@@ -77,3 +75,40 @@ async def triage_endpoint(request: UserRequest):
         print(f"Error: {str(e)}")
         raise HTTPException(status_code=500, detail="Erreur interne du système de triage.")
     
+@app.post("/triage-vocal")
+async def triage_vocal(file: UploadFile = File(...), session_id: Optional[str] = None):
+    temp_path = f"temp_{uuid.uuid4()}_{file.filename}" 
+    with open(temp_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+    try:
+        # Transcription
+        text_query = transcribe_audio(temp_path)
+        
+        sid = session_id or str(uuid.uuid4())
+        token = current_session_id.set(sid)
+        config = {"configurable": {"thread_id": sid}}
+
+        # Appel de l'orchestrateur 
+        result = orchestrator.invoke(
+            {"messages": [HumanMessage(content=text_query)]}, 
+            config=config
+        )
+
+        bot_response = result['messages'][-1].content
+        current_session_id.reset(token)
+
+        return {
+            "status": "success",
+            "session_id": sid,
+            "transcription": text_query,
+            "ai_response": bot_response
+        }
+
+    except Exception as e:
+        print(f"Error Vocal: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Erreur STT/Agent: {str(e)}")
+    
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
