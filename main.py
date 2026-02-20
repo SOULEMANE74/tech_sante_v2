@@ -1,4 +1,3 @@
-import uvicorn
 from fastapi import FastAPI, HTTPException, Form, Response, UploadFile, File, requests
 from pydantic import BaseModel
 from typing import Optional
